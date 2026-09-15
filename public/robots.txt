@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://battleship.correia95.workers.dev/sitemap.xml

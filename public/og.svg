@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#071620"/>
+  <g transform="translate(830,180)">
+    <path d="M0 220 h230 l-30 60 H30 z" fill="none" stroke="#38bdf8" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M70 220 v-90 h30 v90 M140 220 v-120 h20 v120" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="90" y="150" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="76" font-weight="800" fill="#e6eef4" letter-spacing="-1">Battleship</text>
+  <text x="90" y="205" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="27" fill="#90a7b6">Single-player, vs. a hunt-and-target AI</text>
+  <text x="90" y="440" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="24" fill="#e6eef4">Sink the fleet before it sinks yours</text>
+  <text x="90" y="488" font-family="-apple-system, Segoe UI, Roboto, sans-serif" font-size="22" fill="#90a7b6">Free · no sign-up · runs in your browser</text>
+</svg>

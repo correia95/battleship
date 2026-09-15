@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c4a6e" />
+
+    <title>Battleship — single-player, vs. the computer</title>
+    <meta
+      name="description"
+      content="Play Battleship against a hunt-and-target computer opponent, entirely in your browser. Sink the enemy fleet before it sinks yours. No sign-up, no download."
+    />
+    <link rel="canonical" href="https://battleship.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Battleship" />
+    <meta property="og:description" content="Single-player Battleship against a computer opponent. Free, in your browser." />
+    <meta property="og:url" content="https://battleship.correia95.workers.dev/" />
+    <meta property="og:image" content="https://battleship.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Battleship" />
+    <meta name="twitter:description" content="Single-player Battleship against a computer opponent. Free, in your browser." />
+    <meta name="twitter:image" content="https://battleship.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Battleship",
+        "url": "https://battleship.correia95.workers.dev/",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Single-player Battleship against a hunt-and-target computer opponent, with the standard five-ship fleet, entirely in the browser."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the computer opponent decide where to fire?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It hunts using a checkerboard pattern first, since every ship is at least 2 cells long and must occupy at least one checkerboard-parity square. Once it lands a hit, it targets the adjacent cells until that ship is sunk, then returns to hunting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What ships are in the fleet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The standard five: a 5-cell Carrier, 4-cell Battleship, two 3-cell ships (Cruiser and Submarine), and a 2-cell Destroyer, all placed randomly on a 10x10 board."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data sent to a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Both fleets and every shot are generated and resolved entirely in your browser."
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+      .tt-nav { box-sizing: border-box; width: 100%; margin: 0; background: #f1f1f4; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .tt-nav a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; text-decoration: none; color: #3730a3; font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .tt-nav a:hover { color: #1e1b4b; text-decoration: underline; }
+      .tt-nav svg { width: 14px; height: 14px; flex: none; }
+      @media (prefers-color-scheme: dark) {
+        .tt-nav { background: #15151b; border-bottom-color: rgba(255, 255, 255, 0.12); }
+        .tt-nav a { color: #c7d2fe; }
+        .tt-nav a:hover { color: #e0e7ff; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="tt-nav"><a href="https://tinytools.correia95.workers.dev/" aria-label="TinyTools home — all tools and games"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg><span>TinyTools</span></a></nav>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This Battleship game needs JavaScript to run in your browser.
+      </p>
+    </noscript>
+  </body>
+</html>

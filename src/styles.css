@@ -1,0 +1,85 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f0f4f8;
+  --card: #ffffff;
+  --card-2: #dbe7f0;
+  --ink: #0c1f2e;
+  --ink-soft: #536a7a;
+  --line: #c6d6e0;
+  --brand: #0c4a6e;
+  --water: #cfe3ee;
+  --ship: #536a7a;
+  --hit: #dc2626;
+  --miss: #94a3b8;
+  --good: #15803d;
+  --good-soft: #dcfce7;
+  --bad: #b91c1c;
+  --bad-soft: #fee2e2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #071620;
+    --card: #0f2432;
+    --card-2: #163041;
+    --ink: #e6eef4;
+    --ink-soft: #90a7b6;
+    --line: #1f3646;
+    --brand: #38bdf8;
+    --water: #10293a;
+    --ship: #6b8394;
+    --hit: #f87171;
+    --miss: #475569;
+    --good: #4ade80;
+    --good-soft: #0f2f1e;
+    --bad: #f87171;
+    --bad-soft: #3a1414;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.app { max-width: 620px; margin: 0 auto; padding: 22px 16px 60px; }
+header h1 { font-size: clamp(1.5rem, 4.5vw, 2rem); margin: 0 0 6px; letter-spacing: -0.02em; }
+.tag { color: var(--ink-soft); margin: 0 0 14px; max-width: 60ch; font-size: 0.92rem; }
+
+.scoreboard { display: flex; justify-content: space-between; align-items: center; font-size: 0.86rem; color: var(--ink-soft); margin-bottom: 10px; }
+.link-btn { border: none; background: transparent; color: var(--brand); font: inherit; font-weight: 700; cursor: pointer; padding: 0; }
+
+.message { text-align: center; font-weight: 700; font-size: 0.96rem; padding: 10px; border-radius: 10px; background: var(--card-2); margin-bottom: 16px; }
+.message.won { background: var(--good-soft); color: var(--good); }
+.message.lost { background: var(--bad-soft); color: var(--bad); }
+
+.boards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 18px; }
+.board-panel { flex: 1; min-width: 260px; }
+.board-panel h2 { font-size: 0.86rem; text-align: center; margin: 0 0 8px; color: var(--ink-soft); }
+
+.grid { display: grid; gap: 2px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; aspect-ratio: 1 / 1; }
+.cell {
+  background: var(--water); border: none; padding: 0; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; font-size: 0.9rem; font-weight: 800; color: var(--ink); aspect-ratio: 1 / 1;
+}
+.cell:disabled { cursor: default; }
+.cell.ship { background: var(--ship); }
+.cell.ship-hit { background: var(--hit); color: #fff; }
+.cell.hit { background: var(--hit); color: #fff; }
+.cell.miss { background: var(--miss); color: #fff; }
+
+.primary { display: block; margin: 0 auto; border: 0; background: var(--brand); color: #fff; font: inherit; font-weight: 700; padding: 12px 26px; border-radius: 10px; cursor: pointer; }
+
+.explainer { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 10px; }
+.explainer h2 { font-size: 1.1rem; margin: 18px 0 8px; }
+.explainer h3 { font-size: 0.96rem; margin: 16px 0 6px; }
+.explainer p { color: var(--ink-soft); font-size: 0.9rem; }
+.explainer footer { margin-top: 24px; text-align: center; font-size: 0.8rem; color: var(--ink-soft); }
+
+@media (max-width: 560px) {
+  .boards { flex-direction: column; align-items: center; }
+  .board-panel { width: 100%; max-width: 380px; }
+}
